@@ -1,0 +1,64 @@
+{
+	"name": "@svta/common-media-library-workspace",
+	"version": "0.7.4",
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/streaming-video-technology-alliance/common-media-library",
+	"authors": "Casey Occhialini <1508707+littlespex@users.noreply.github.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/streaming-video-technology-alliance/common-media-library.git"
+	},
+	"bugs": {
+		"url": "https://github.com/streaming-video-technology-alliance/common-media-library/issues"
+	},
+	"keywords": [
+		"CTA-5004",
+		"Common Media Client Data",
+		"CMCD",
+		"CTA-5006",
+		"Common Media Server Data",
+		"CMSD",
+		"RFC8941",
+		"Structured Field Values",
+		"ID3",
+		"Common Media Request",
+		"Common Media Response"
+	],
+	"scripts": {
+		"format": "npm run lint -- --fix",
+		"lint": "eslint .",
+		"build": "npm run build -ws --if-present",
+		"pretest": "npm run build && npm run lint",
+		"test": "npm test -ws --if-present",
+		"start": "npm start -w dev",
+		"pub": "npm publish -w lib --provenance --access public",
+		"ver": "tsx scripts/version.mts",
+		"docs": "npm start -w docs",
+		"notes": "tsx scripts/createReleaseNotes.mts",
+		"typecheck": "tsc --noEmit"
+	},
+	"workspaces": [
+		"lib",
+		"docs",
+		"dev",
+		"samples/*"
+	],
+	"devDependencies": {
+		"@eslint/eslintrc": "3.1.0",
+		"@eslint/js": "9.13.0",
+		"@microsoft/api-extractor": "7.47.11",
+		"@types/node": "22.8.0",
+		"@typescript-eslint/eslint-plugin": "8.11.0",
+		"@typescript-eslint/parser": "8.11.0",
+		"eslint": "9.13.0",
+		"eslint-plugin-tsdoc": "0.3.0",
+		"eslint-plugin-typescript-enum": "2.1.0",
+		"glob": "11.0.0",
+		"globals": "15.11.0",
+		"hi-base32": "0.5.1",
+		"tslib": "2.8.0",
+		"tsx": "4.19.1",
+		"typedoc": "0.26.10",
+		"typescript": "5.6.3"
+	}
+}
